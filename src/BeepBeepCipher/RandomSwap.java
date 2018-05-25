@@ -4,7 +4,7 @@ import java.util.*;
 
 public class RandomSwap {
 
-    public static void swap(ArrayList<String> arr){
+    public static void swap(List<String> arr){
         for (int i = 0; i < arr.size(); i++){
             Collections.swap(arr, i, (int) (Math.random() * i));
         }
@@ -31,7 +31,7 @@ public class RandomSwap {
             System.out.println("You must actually type something goofy head!");
         }else{
             List<String> list = Arrays.asList(input.split(""));
-            ArrayList<String> n = new ArrayList<>(list);
+            List<String> n = list;
             listOfList.add(list);
             swap(n);
         }
