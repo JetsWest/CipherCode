@@ -1,23 +1,32 @@
 package BeepBeepCipher;
 
-import java.util.Collections;
-import java.util.ArrayList;
+import java.util.*;
 
 public class RandomSwap {
-    private ArrayList<String> str;
 
-    public RandomSwap(String string){
-        for (String s:string.split("")){
-            str.add(s);
-        }
-    }
     public static void swap(ArrayList<String> arr){
         for (int i = 0; i < arr.size(); i++){
             Collections.swap(arr, i, (int) (Math.random() * i));
         }
     }
     public static void main(String[] args){
-        RandomSwap r = new RandomSwap("I finna do it to em");
-
+        ArrayList<List<String>> listOfList = new ArrayList<List<String>>(0);
+        System.out.println("Hello! Please input the string you would want changed below!");
+        Scanner s = new Scanner(System.in);
+        String input = s.nextLine();
+        if (input.equals("")){
+            System.out.println("You must actually type something goofy head!");
+        }else{
+            List<String> list = Arrays.asList(input.split(""));
+            ArrayList<String> n = new ArrayList<>(list);
+            listOfList.add(list);
+            swap(n);
+            String str = "";
+            for (String string:n){
+                str += string;
+            }
+            System.out.println(str);
+            System.out.println(Arrays.asList(listOfList));
+        }
     }
 }
