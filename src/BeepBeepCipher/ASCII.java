@@ -1,54 +1,36 @@
-package BeepBeepCipher;
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
 import java.util.Scanner;
 
-public class ASCII {
-    private static ArrayList<Integer> a = new ArrayList<>();
-
-    public static void swap(List<String> arr){
-        for (int i = 0; i < arr.size(); i++){
-            a.add(i, (int) arr.get(i).charAt(0));
-        }
-        for (int j = 0; j < a.size(); j++){
-            System.out.print(a.get(j));
-        }
+public class Base64Decode {
+    public static void decode(String encoded) throws UnsupportedEncodingException {
+        byte[] encodedString = Base64.getDecoder().decode(encoded);
+        System.out.println(new String(encodedString, "UTF-8"));
     }
-
-    public static void decode(ArrayList<List<Integer>> arr){
-        System.out.println("Which item would you like to decode from ASCII DECODER? Input below!");
+    public static void encode(String str){
+        String encodedString = Base64.getEncoder().encodeToString(str.getBytes());
+        System.out.println(encodedString);
+    }
+    public static void run() throws UnsupportedEncodingException {
+        System.out.println("Welcome! Would you like to decode or encode today?");
+        System.out.println("1) Decode");
+        System.out.println("2) Encode");
         Scanner s = new Scanner(System.in);
-        int j = s.nextInt();
-        if (j-1 < 0 || j-1 > arr.size()){
-            System.out.println("BOY! IN THE ARRAY YA GOOF HEAD!");
-        }
-        for (int i = 0; i < arr.get(j-1).size(); i++){
-            int number = arr.get(j-1).get(i);
-            System.out.print(Character.toString((char) number));
-        }
-    }
-
-    public static void run() throws IOException {
-        ArrayList<List<Integer>> listOfList = new ArrayList<List<Integer>>(0);
-        System.out.println("Hello! Please input the string you would want changed below!");
-        System.out.println("Your information can be found at: C:\\Users\\Jackson Atkins\\IdeaProjects\\CipherCode");
-        Scanner s = new Scanner(System.in);
-        String input = s.nextLine();
-        if (input.equals("")) {
-            System.out.println("You must actually type something goofy head!");
-        } else {
-            List<String> list = Arrays.asList(input.split(""));
-            swap(list);
-            listOfList.add(a);
+        int x = s.nextInt();
+        if (x == 1){
+            System.out.println("Input a string - already in Base64 - below!");
+            String c = s.nextLine();
+            decode(c);
+        }else if (x == 2){
+            System.out.println("Input a string below!");
+            String p = s.nextLine();
+            encode(p);
+        }else{
+            System.out.println("THOT BE NIMBLE, THOT BE QUICK, BUT THOT DOES NOT HOW HOW TO USE BASE64 CLICK");
         }
     }
-
     public static void main(String[] args)throws IOException {
         run();
     }
 }
-
-
