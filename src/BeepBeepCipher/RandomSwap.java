@@ -1,8 +1,7 @@
-package BeepBeepCipher;
-
 import java.util.*;
 
 public class RandomSwap {
+    private static ArrayList<List<String>> listOfList = new ArrayList<>(0);
 
     public static void swap(List<String> arr){
         for (int i = 0; i < arr.size(); i++){
@@ -23,7 +22,6 @@ public class RandomSwap {
         }
     }
     public static void run(){
-        ArrayList<List<String>> listOfList = new ArrayList<List<String>>(0);
         System.out.println("Hello! Please input the string you would want changed below!");
         Scanner s = new Scanner(System.in);
         String input = s.nextLine();
@@ -31,7 +29,7 @@ public class RandomSwap {
             System.out.println("You must actually type something goofy head!");
         }else{
             List<String> list = Arrays.asList(input.split(""));
-            List<String> n = list;
+            List<String> n = new ArrayList<String>(list);
             listOfList.add(list);
             swap(n);
         }
