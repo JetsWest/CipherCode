@@ -1,3 +1,5 @@
+package cipher;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -27,6 +29,7 @@ public class RandomSwap {
             System.out.print(arr.get(j-1).get(i));
         }
     }
+    
     public static void run() throws IOException {
         System.out.println("Hello! Please input the string you would want changed below!");
         Scanner s = new Scanner(System.in);
@@ -38,12 +41,14 @@ public class RandomSwap {
             List<String> n = new ArrayList<String>(list);
             listOfList.add(list);
             swap(n);
-            File f = new File("File " + (i+1) + ".txt");
+            File f = new File(input + ".txt");
+            String x = String.join("", n);
             System.out.println("You can find this file in your IdeaProjects folder");
-            FileOutput.print(input, f);
+            FileOutput.print(x, f);
         }
     }
     public static void main(String[] args) throws IOException {
+        run();
         run();
     }
 }
