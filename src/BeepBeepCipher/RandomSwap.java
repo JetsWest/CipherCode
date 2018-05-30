@@ -8,7 +8,6 @@ public class RandomSwap {
     private static ArrayList<List<String>> listOfList = new ArrayList<>(0);
     private static FileOutputStream fos;
     private static PrintWriter pw;
-    static int i = 0;
 
     public static void swap(List<String> arr){
         for (int i = 0; i < arr.size(); i++){
@@ -40,7 +39,6 @@ public class RandomSwap {
             listOfList.add(list);
             swap(n);
             File f = new File("File " + (i+1) + ".txt");
-            i++;
             System.out.println("You can find this file in your IdeaProjects folder");
             FileOutput.print(input, f);
         }
