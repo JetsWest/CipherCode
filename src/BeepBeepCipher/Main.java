@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -12,9 +13,12 @@ public class Main {
         int choice = s.nextInt();
         switch(choice){
             case 1:
+                System.out.println("Choose an item below!");
                 Base64Decode.run();
                 break;
             case 2:
+                System.out.println("You can only decode after you have decoded one or more items. This is because it is RANDOM and you cannot easily undo it.");
+                RandomSwap.run();
                 RandomSwap.run();
                 break;
             case 3:
