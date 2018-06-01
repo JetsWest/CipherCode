@@ -1,5 +1,4 @@
 package cipher;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -46,9 +45,18 @@ public class RandomSwap {
             System.out.println("You can find this file in your IdeaProjects folder");
             FileOutput.print(x, f);
         }
+        System.out.println("Would you like to run again?");
+        System.out.println("1) Yes 2) No");
+        int x = s.nextInt();
+        if (x == 1){
+            Main.run();
+        }else if (x == 2){
+            System.exit(0);
+        }else{
+            System.out.println("REEEEEEE! You do not get to run again after your goofy actions have killed thee.");
+        }
     }
     public static void main(String[] args) throws IOException {
-        run();
         run();
     }
 }
