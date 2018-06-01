@@ -1,9 +1,9 @@
+package cipher; 
 import java.io.IOException;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void run() throws IOException{
         System.out.println("Hello! Welcome to our encryption project! Choose an option below!");
         System.out.println("1) Base64");
         System.out.println("2) Random Swap");
@@ -19,13 +19,18 @@ public class Main {
             case 2:
                 System.out.println("You can only decode after you have decoded one or more items. This is because it is RANDOM and you cannot easily undo it.");
                 RandomSwap.run();
-                RandomSwap.run();
                 break;
             case 3:
 
             case 4:
-
+                    
+            default:
+                System.out.println("HEY BROTHER YOU REEEE!");
+            break;
         }
+    }
+    public static void main(String[] args) throws IOException {
+        run();
     }
 
 }
