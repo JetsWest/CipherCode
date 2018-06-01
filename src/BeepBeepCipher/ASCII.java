@@ -1,4 +1,3 @@
-package cipher;
 import java.io.*;
 import java.util.Base64;
 import java.util.Scanner;
