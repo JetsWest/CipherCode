@@ -1,3 +1,4 @@
+package BoopBoop;
 import java.io.*;
 import java.util.Base64;
 import java.util.Scanner;
@@ -19,7 +20,8 @@ public class Base64Decode {
         System.out.println("1) Decode");
         System.out.println("2) Encode");
         Scanner s = new Scanner(System.in);
-        String x = s.nextLine();
+        //String x = s.nextLine();
+        String x = HelloApplet.x;
         if (x.equals("1")){
             System.out.println("Input a string - already in Base64 - below!");
             System.out.println("It will not output to a file. Why would you need to remember the decoded?");
