@@ -1,3 +1,5 @@
+package BoopBoop;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -31,7 +33,8 @@ public class RandomSwap {
     public static void run() throws IOException {
         System.out.println("Hello! Please input the string you would want changed below!");
         Scanner s = new Scanner(System.in);
-        String input = s.nextLine();
+        //String input = s.nextLine();
+        String input = HelloApplet.x;
         if (input.equals("")){
             System.out.println("You must actually type something goofy head!");
         }else{
