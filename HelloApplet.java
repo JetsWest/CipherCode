@@ -10,11 +10,18 @@ public class HelloApplet extends Applet implements ActionListener{
     private Button b, d,boton, eep;
     private TextField tf;
     public static String x;
-
     public void paint(Graphics g){
+
         g.setColor(Color.red);
-        g.setFont(g.getFont().deriveFont(18.0f));
+        Font myFont = new Font("Comic Sans MS", Font.ITALIC | Font.BOLD, 12);
+        g.setFont(myFont.deriveFont(15F));
         g.drawString("Welcome to our program!!", 20, 20);
+        g.drawString("Hello Mr. Booth. " +
+                "We have chosen to not add a decoder for the random swap, " +
+                "as it is incredibly unintuitive and it does not make sense to implement.", 20, 40);
+        g.drawString("Type your text here and then click the decoder.", 20, 180);
+        g.drawString("Here is your decoded text:", 20, 245);
+        g.drawString(BoopBoop.Base64Decode.getString(), 235, 245);
 
     }
 
@@ -41,6 +48,7 @@ public class HelloApplet extends Applet implements ActionListener{
             x = tf.getText();
             try {
                 BoopBoop.RandomSwap.run();
+                init();
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -56,6 +64,10 @@ public class HelloApplet extends Applet implements ActionListener{
             x = tf.getText();
             try {
                 BoopBoop.Base64Decode.run();
+                remove(d);
+                remove(eep);
+                x = "";
+                init();
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -65,6 +77,10 @@ public class HelloApplet extends Applet implements ActionListener{
             x = tf.getText();
             try {
                 BoopBoop.Base64Decode.run();
+                remove(d);
+                remove(eep);
+                x ="";
+                init();
             } catch (IOException e1) {
                 e1.printStackTrace();
             }

@@ -4,20 +4,22 @@ import AppletPackage.HelloApplet;
 
 import java.io.*;
 import java.util.Base64;
-import java.util.Scanner;
 
 public class Base64Decode {
-    private static FileOutputStream fos;
-    private static PrintWriter pw;
-    private static String encodedString;
+
+    private static String encodedString ="";
     private static String peep;
 
+    public static String getString(){
+        return encodedString;
+    }
     public static void setString(String str){
         peep = str;
     }
     public static void decode(String encoded) throws UnsupportedEncodingException {
         byte[] encoder = Base64.getDecoder().decode(encoded);
-        System.out.println(new String(encoder, "UTF-8"));
+        encodedString = new String(encoder, "UTF-8");
+        System.out.println(encodedString);
     }
 
     public static void encode(String str) {
