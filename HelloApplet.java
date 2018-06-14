@@ -173,7 +173,7 @@ public class HelloApplet extends Applet implements ActionListener{
             x = tf.getText();
             Vigenere v = new Vigenere();
            try {
-               v.encrypt(x, "JACKSONISTHEBESTCODER");
+               v.decrypt(x, "JACKSONISTHEBESTCODER");
                remove(vigenc);
                remove(vigdec);
                i++;
